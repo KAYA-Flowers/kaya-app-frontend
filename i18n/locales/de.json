@@ -1,0 +1,11 @@
+{
+    "order": {
+        "formular": {
+            "postcodeHeadline": "Postleitzahl"
+        }
+    },
+    "actions": {
+        "back": "Zurück",
+        "forward": "Weiter"
+    }
+}

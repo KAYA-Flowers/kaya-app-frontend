@@ -1,0 +1,31 @@
+body {
+    background: #ff0;
+    margin: 0;
+    --kaya-yellow-normal: #EBD37D;
+    --kaya-yellow-darker: #E9D36C;
+    --kaya-green-normal: rgba(110, 217, 100, 0.81);
+    --kaya-green-darker: rgba(110, 217, 100, 0.81);
+    --kaya-blue-normal: #89D7D7;
+    --kaya-red-normal: #FFB5CE;
+    --kaya-text-color: #1A2634;
+}
+
+.kaya_bg_tiny-logo {
+    &:after {
+        content: '';
+        position: absolute;
+        left: 0;
+        top: 0;
+        width: 100%;
+        height: 100%;
+        background-image: url('~/assets/img/kaya-logos-tiny.svg');
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-position: center;
+        pointer-events: none;
+        z-index: 1;
+    }
+    & > * {
+        z-index: 2;
+    }
+}
