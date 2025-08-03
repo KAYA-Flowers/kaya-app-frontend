@@ -1,6 +1,6 @@
 <template>
     <div class="kaya_content__delivery-zone kaya_bg_tiny-logo">
-        <OrderFormBox>
+        <OrderFormBox @forward="handleInput()" :error="inputError">
             <template #headline>
                 {{ $t('order.formular.postcodeHeadline') }}
             </template>
@@ -30,11 +30,20 @@
 </style>
 
 <script>
+import { useOrderConfigStore } from '@/stores/order-config.js'
+
 export default {
     name: "DeliveryZone",
     data() {
         return {
-            postcode: null
+            postcode: null,
+            inputError: ref(false)
+        }
+    },
+    setup() {
+        const store = useOrderConfigStore()
+        return {
+            store
         }
     },
     methods: {
@@ -46,6 +55,14 @@ export default {
                     .replace(/(\d)(?:\d+)|([A-Z])(?:[A-Z]+)/gi, "$1$2")
                     .slice(0, 6)
                     .replace(/^(...)(.)/, "$1 $2");
+        },
+        handleInput() {
+            if (!this.postcode || this.postcode.length < 4) {
+                this.inputError = true;
+            } else {
+                this.inputError = false;
+                this.store.setPostcode(this.postcode)
+            }
         }
     }
 }
