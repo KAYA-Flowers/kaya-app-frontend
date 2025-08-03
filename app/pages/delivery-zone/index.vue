@@ -49,6 +49,11 @@ export default {
             store
         }
     },
+    mounted() {
+        if (this.store.postcode) {
+            this.postcode = this.store.postcode
+        }
+    },
     methods: {
         handlePostcodeInput() {
             this.postcode = /^\d/.test(this.postcode)
