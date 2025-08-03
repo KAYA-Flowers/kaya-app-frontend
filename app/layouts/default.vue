@@ -14,6 +14,7 @@
         ">
             <b>DEV MODE</b>
             <ul style="padding-inline-start: 1rem;">
+                <li>Language: {{this.$i18n.locale}}</li>
                 <li>Postcode: {{store.postcode}}</li>
             </ul>
         </div>

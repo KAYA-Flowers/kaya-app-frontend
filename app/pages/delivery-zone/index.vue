@@ -4,6 +4,9 @@
             <template #headline>
                 {{ $t('order.formular.postcodeHeadline') }}
             </template>
+            <template #description>
+                {{ $t('order.formular.postcodeDescription') }}
+            </template>
             <template #input>
                 <input
                     type="text"
@@ -33,7 +36,7 @@
 import { useOrderConfigStore } from '@/stores/order-config.js'
 
 export default {
-    name: "DeliveryZone",
+    name: "DeliveryZoneIndex",
     data() {
         return {
             postcode: null,
@@ -62,6 +65,7 @@ export default {
             } else {
                 this.inputError = false;
                 this.store.setPostcode(this.postcode)
+                this.$router.push({path: '/order/form'})
             }
         }
     }

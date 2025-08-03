@@ -9,6 +9,9 @@
             <div class="kaya__order-form-box__headline">
                 <slot name="headline"></slot>
             </div>
+            <div class="kaya__order-form-box__description">
+                <slot name="description"></slot>
+            </div>
             <div class="kaya__order-form-box__formfields">
                 <slot name="input"></slot>
             </div>
@@ -69,6 +72,15 @@ export default {
         line-height: 1;
         word-break: break-all;
         hyphens: auto;
+    }
+    &__description {
+        font-family: 'Alumni Sans', sans-serif;
+        font-weight: 400;
+        color: var(--kaya-text-color);
+        font-size: 1.25rem;
+        line-height: .9;
+        text-align: center;
+        margin-bottom: 1rem;
     }
     &__logo svg {
         max-width: 100%;

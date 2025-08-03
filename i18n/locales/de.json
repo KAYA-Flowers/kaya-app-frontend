@@ -1,7 +1,8 @@
 {
     "order": {
         "formular": {
-            "postcodeHeadline": "Postleitzahl"
+            "postcodeHeadline": "Postleitzahl",
+            "postcodeDescription": "Bitte gib hier deine PLZ ein, um es mit unserem Liefergebiet zu prüfen."
         }
     },
     "actions": {
