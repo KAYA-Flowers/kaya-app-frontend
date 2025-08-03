@@ -37,7 +37,7 @@ export default {
             this.$emit("forward")
         },
         back() {
-            this.$router.back()
+            this.$emit("back")
         }
     }
 }

@@ -8,6 +8,9 @@ export default defineNuxtConfig({
         defaultLocale: 'de',
         locales: [
             { code: 'de', name: 'German', file: 'de.json' }
-        ]
+        ],
+        compilation: {
+            strictMessage: false,
+        },
     }
 })

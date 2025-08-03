@@ -2,7 +2,30 @@
     "order": {
         "formular": {
             "postcodeHeadline": "Postleitzahl",
-            "postcodeDescription": "Bitte gib hier deine PLZ ein, um es mit unserem Liefergebiet zu prüfen."
+            "postcodeDescription": "Bitte gib hier deine PLZ ein, um es mit unserem Liefergebiet zu prüfen.",
+            "orderFormular": {
+                "stepOne": {
+                    "title": "Wir kann ich dir helfen Champ?",
+                    "description": "Wähle aus, wobei ich dir helfen kann.",
+                    "answers": [
+                        "Sofortlieferung",
+                        "Lieferung per DHL",
+                        "Rezept"
+                    ]
+                },
+                "stepTwo": {
+                    "title": "Hast du bereits über Kaya ein Rezept erhalten?",
+                    "description": "",
+                    "answers": [
+                        "Ja",
+                        "Nein"
+                    ]
+                },
+                "stepThree": {
+                    "title": "Bitte lies dir die folgenden Hinweise aufmerksam durch und bestätige sie:",
+                    "description": ""
+                }
+            }
         }
     },
     "actions": {
