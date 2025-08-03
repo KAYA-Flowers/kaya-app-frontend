@@ -4,6 +4,15 @@
             <template #headline>
                 {{ $t('order.formular.postcodeHeadline') }}
             </template>
+            <template #input>
+                <input
+                    type="text"
+                    class="kaya-util__input"
+                    name="postcode"
+                    v-model="postcode"
+                    @input="handlePostcodeInput()"
+                />
+            </template>
         </OrderFormBox>
     </div>
 </template>
@@ -23,5 +32,21 @@
 <script>
 export default {
     name: "DeliveryZone",
+    data() {
+        return {
+            postcode: null
+        }
+    },
+    methods: {
+        handlePostcodeInput() {
+            this.postcode = /^\d/.test(this.postcode)
+                ? this.postcode.replace(/[^\d]/g, "")
+                    .slice(0, 5)
+                : this.postcode.replace(/\W/g, "")
+                    .replace(/(\d)(?:\d+)|([A-Z])(?:[A-Z]+)/gi, "$1$2")
+                    .slice(0, 6)
+                    .replace(/^(...)(.)/, "$1 $2");
+        }
+    }
 }
 </script>

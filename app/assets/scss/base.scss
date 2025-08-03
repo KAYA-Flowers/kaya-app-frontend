@@ -29,3 +29,20 @@ body {
         z-index: 2;
     }
 }
+
+.kaya-util__input {
+    border: 2px solid var(--kaya-yellow-normal);
+    border-radius: 1rem;
+    background: var(--kaya-red-normal);
+    font-size: 2rem;
+    text-align: center;
+    padding: .75rem .5rem;
+    transition: border-width .2s ease-in-out;
+    font-family: 'Alumni Sans', sans-serif;
+    font-weight: 700;
+    color: var(--kaya-text-color);
+    &:focus, &:active {
+        outline: none;
+        border-width: 5px;
+    }
+}

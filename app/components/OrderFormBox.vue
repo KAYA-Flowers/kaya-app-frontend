@@ -9,10 +9,13 @@
             <div class="kaya__order-form-box__headline">
                 <slot name="headline"></slot>
             </div>
+            <div class="kaya__order-form-box__formfields">
+                <slot name="input"></slot>
+            </div>
         </div>
         <div class="kaya__order-form-box__actions">
-            <KayaButton type="button" :text="$t('actions.back')" color="yellow"></KayaButton>
-            <KayaButton type="button" :text="$t('actions.forward')" color="red"></KayaButton>
+            <KayaButton type="button" :text="$t('actions.back')" color="yellow" @click="back()"></KayaButton>
+            <KayaButton type="button" :text="$t('actions.forward')" color="red" @click="forward()"></KayaButton>
         </div>
     </div>
 </template>
@@ -24,6 +27,14 @@ export default {
     name: "OrderFormBox",
     components: {
         KayaButton,
+    },
+    methods: {
+        forward() {
+            console.log("forward")
+        },
+        back() {
+            console.log("back")
+        }
     }
 }
 </script>
@@ -68,6 +79,8 @@ export default {
         display: flex;
         flex-direction: column;
         align-items: center;
+        justify-content: center;
+        row-gap: 1rem;
         min-height: 10rem;
         box-shadow: 0 4px 16px 0 rgba(0, 0, 0, 0.25);
     }
